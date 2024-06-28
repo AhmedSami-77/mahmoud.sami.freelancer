@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "homepage":"http://AhmedSami-77.github.io/mahmoud.sami.freelancer",
     "next": "14.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
