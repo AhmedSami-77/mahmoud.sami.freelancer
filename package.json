@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "private": true,
+  "homepage": "http://AhmedSami-77.github.io/mahmoudsami",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,7 +12,6 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
-    "homepage":"http://AhmedSami-77.github.io/mahmoud_sami",
     "next": "14.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
