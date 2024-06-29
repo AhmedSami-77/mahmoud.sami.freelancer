@@ -30,42 +30,42 @@ export default function Page() {
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
-  
+
   const handleImageLoad = (index: number) => {
-    setLoadedImages(prev => new Set(prev).add(index));
+    setLoadedImages((prev) => new Set(prev).add(index));
   };
 
   return (
     <div
-    style={{ backgroundImage: "url(/mountains.jpg)" }}
-    className="min-h-screen w-full bg-center bg-cover bg-no-repeat relative flex items-center justify-center overflow-hidden"
-  >
-    <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] px-4 md:px-8 lg:px-16">
-      {Reviews.map((reviewSrc, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
-            index === currentIndex ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <Image
-            src={reviewSrc}
-            alt={`Review ${index + 1}`}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            style={{ objectFit: "contain" }}
-            className={`rounded-lg transition-opacity duration-300 ${
-              loadedImages.has(index) ? "opacity-100" : "opacity-0"
+      style={{ backgroundImage: "url(/bg-2.jpg)" }}
+      className="min-h-screen w-full bg-center bg-cover bg-no-repeat relative flex items-center justify-center overflow-hidden"
+    >
+      <div className="relative w-full h-[50vh] md:h-[60vh] lg:h-[70vh] px-4 md:px-8 lg:px-16">
+        {Reviews.map((reviewSrc, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${
+              index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
-            onLoad={() => handleImageLoad(index)}
-          />
-          {!loadedImages.has(index) && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
-            </div>
-          )}
-        </div>
-      ))}
+          >
+            <Image
+              src={reviewSrc}
+              alt={`Review ${index + 1}`}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{ objectFit: "contain" }}
+              className={`rounded-lg transition-opacity duration-300 ${
+                loadedImages.has(index) ? "opacity-100" : "opacity-0"
+              }`}
+              onLoad={() => handleImageLoad(index)}
+            />
+            {!loadedImages.has(index) && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
+              </div>
+            )}
+          </div>
+        ))}
         <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
           {Reviews.map((_, index) => (
             <button

@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://AhmedSami-77.github.io/mahmoud_sami",
+  "homepage": "http://AhmedSami-77.github.io/mahmoudsami",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
